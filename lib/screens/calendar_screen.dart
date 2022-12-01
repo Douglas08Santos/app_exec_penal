@@ -54,69 +54,47 @@ class _CalendarScreenState extends State<CalendarScreen> {
             titleTextStyle: const TextStyle(color: Colors.blueGrey),
             titleCentered: true,
           ),
-
           calendarStyle: const CalendarStyle(
-            selectedDecoration:  BoxDecoration(
-                color: Colors.blueGrey,
-                shape: BoxShape.rectangle
-            ),
+            selectedDecoration: BoxDecoration(
+                color: Colors.blueGrey, shape: BoxShape.rectangle),
             selectedTextStyle: TextStyle(
               color: Color.fromRGBO(238, 230, 226, 1),
             ),
-            todayDecoration: BoxDecoration(
-                color: Colors.grey,
-                shape: BoxShape.rectangle
-            ),
+            todayDecoration:
+                BoxDecoration(color: Colors.grey, shape: BoxShape.rectangle),
             todayTextStyle: TextStyle(
               color: Colors.blueGrey,
             ),
             defaultDecoration: BoxDecoration(
-              color: Colors.transparent,
-              shape: BoxShape.rectangle
-            ),
-            defaultTextStyle: TextStyle(
-              color: Colors.blueGrey
-            ),
-
-            weekendDecoration:BoxDecoration(
-              color: Colors.amber,
-              shape: BoxShape.rectangle
-            ),
-
-            weekendTextStyle: TextStyle(
-              color: Colors.blueGrey
-            ),
+                color: Colors.transparent, shape: BoxShape.rectangle),
+            defaultTextStyle: TextStyle(color: Colors.blueGrey),
+            weekendDecoration:
+                BoxDecoration(color: Colors.amber, shape: BoxShape.rectangle),
+            weekendTextStyle: TextStyle(color: Colors.blueGrey),
           ),
-          calendarBuilders: CalendarBuilders(
-            dowBuilder: (context, day) {
-              String text;
-              if(day.weekday == DateTime.sunday){
-                text = 'Dom';
-              }else if(day.weekday == DateTime.monday){
-                text = 'Seg';
-              }else if(day.weekday == DateTime.tuesday){
-                text = 'Ter';
-              }else if(day.weekday == DateTime.wednesday){
-                text = 'Qua';
-              }else if(day.weekday == DateTime.thursday){
-                text = 'Qui';
-              }else if(day.weekday == DateTime.friday){
-                text = 'Sex';
-              }else if(day.weekday == DateTime.saturday){
-                text = 'Sáb';
-              }else {
-                text = 'err';
-              }
-              return Center(
-                child: Text(
-                    text,
-                    style: const TextStyle(
-                        color: Colors.blueGrey
-                    )
-                )
-              );
+          calendarBuilders: CalendarBuilders(dowBuilder: (context, day) {
+            String text;
+            if (day.weekday == DateTime.sunday) {
+              text = 'Dom';
+            } else if (day.weekday == DateTime.monday) {
+              text = 'Seg';
+            } else if (day.weekday == DateTime.tuesday) {
+              text = 'Ter';
+            } else if (day.weekday == DateTime.wednesday) {
+              text = 'Qua';
+            } else if (day.weekday == DateTime.thursday) {
+              text = 'Qui';
+            } else if (day.weekday == DateTime.friday) {
+              text = 'Sex';
+            } else if (day.weekday == DateTime.saturday) {
+              text = 'Sáb';
+            } else {
+              text = 'err';
             }
-          ),
+            return Center(
+                child:
+                    Text(text, style: const TextStyle(color: Colors.blueGrey)));
+          }),
         ),
       ],
     );
